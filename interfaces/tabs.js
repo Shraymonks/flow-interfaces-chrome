@@ -115,12 +115,12 @@ type chrome$tabs = {
     ) => void)
   ),
   get(tabId: number, callback: (tab: chrome$Tab) => void): void,
-  getAllInWindow(
+  getAllInWindow: (
     ((windowId: number, callback: (tabs: Array<chrome$Tab>) => void) => void) &
     ((callback: (tabs: Array<chrome$Tab>) => void) => void)
   ),
   getCurrent(callback: (tab?: chrome$Tab) => void): void,
-  getSelected(
+  getSelected: (
     ((windowId: number, callback: (tab: chrome$Tab) => void) => void) &
     ((callback: (tab: chrome$Tab) => void) => void)
   ),

@@ -4,13 +4,16 @@
 ## Usage
 
 ### NPM
-TODO
+```sh
+npm install --save-dev flow-interfaces-chrome
+```
 
 ### Flow Config
 Add the interfaces to your `.flowconfig`:
-
-    [libs]
-    <path/to/this/package>/interfaces/
+```
+[libs]
+node_modules/flow-interfaces-chrome/interfaces/
+```
 
 ## Types
 Detailed object types described in the [Chrome extension docs](https://developer.chrome.com/extensions/api_index) are also available.

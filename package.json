@@ -1,0 +1,7 @@
+{
+  "author": "Raymond Ha <raymond@shraymonks.com> (http://shraymonks.com)",
+  "description": "Flow interface declarations for the Chrome Extensions API",
+  "name": "flow-interfaces-chrome",
+  "repository": "shraymonks/flow-interfaces-chrome",
+  "version": "0.1.0"
+}

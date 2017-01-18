@@ -19,6 +19,7 @@ declare var chrome: {
   idle: chrome$idle,
   instanceID: chrome$instanceID,
   networking: chrome$networking,
+  notifications: chrome$notifications,
   pageAction: chrome$pageAction,
   permissions: chrome$permissions,
   power: chrome$power,

@@ -31,11 +31,17 @@ type chrome$NotificationOptions = {
 
 type chrome$notifications = {
   clear(notificationId: string, callback?: (wasCleared: boolean) => void): void,
-  create(
-    notificationIdOrOptions: string | chrome$NotificationOptions,
-    optionsOrCallback?: chrome$NotificationOptions | (notificationId: string) => void,
-    callback?: (notificationId: string) => void
-  ): void,
+  create: (
+    ((
+      notificationId: string,
+      options: chrome$NotificationOptions,
+      callback?: (notificationId: string) => void
+    ) => void) &
+    ((
+      options: chrome$NotificationOptions,
+      callback?: (notificationId: string) => void
+    ) => void)
+  ),
   getAll(callback: (notifications: Object) => void): void,
   getPermissionLevel(callback: (level: chrome$PermissionLevel) => void): void,
   update(notificationId: string, options: chrome$NotificationOptions, callback?: (wasUpdated: boolean) => void): void,

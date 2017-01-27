@@ -14,6 +14,7 @@ declare var chrome: {
   devtools: chrome$devtools,
   documentScan: chrome$documentScan,
   downloads: chrome$downloads,
+  extensionTypes: chrome$extensionTypes,
   fileBrowserHandler: chrome$fileBrowserHandler,
   fontSettings: chrome$fontSettings,
   idle: chrome$idle,

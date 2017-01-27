@@ -15,3 +15,10 @@ type chrome$InjectDetails = {
   matchAboutBlank?: boolean,
   runAt?: chrome$RunAt
 };
+
+type chrome$extensionTypes = {
+  ImageDetails: chrome$ImageDetails,
+  ImageFormat: chrome$ImageFormat,
+  InjectDetails: chrome$InjectDetails,
+  RunAt: chrome$RunAt,
+};

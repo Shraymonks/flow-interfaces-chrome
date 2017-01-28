@@ -2,9 +2,9 @@ type chrome$ViewType = 'tab' | 'popup';
 
 type chrome$extension = {
   inIncognitoContext: boolean,
-  lastError: ?{message: string},
+  lastError: {message: string} | void,
 
-  getBackgroundPage(): ?any,
+  getBackgroundPage(): any,
   getURL(path: string): string,
   getViews(fetchProperties?: {
     tabId?: number,

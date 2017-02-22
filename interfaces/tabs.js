@@ -9,7 +9,7 @@ type chrome$MutedInfoReason = 'capture' | 'extension' | 'user';
 type chrome$Tab = {
   active: boolean,
   audible?: boolean,
-  faviconUrl?: string,
+  favIconUrl?: string,
   height?: number,
   highlighted: boolean,
   id?: number,
@@ -298,7 +298,7 @@ type chrome$tabs = {
       tabId: number,
       changeInfo: {
         audible?: boolean,
-        faviconUrl?: string,
+        favIconUrl?: string,
         mutedInfo?: chrome$MutedInfo,
         pinned?: boolean,
         status?: string,

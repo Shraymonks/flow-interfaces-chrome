@@ -93,11 +93,11 @@ type chrome$runtime = {
         message: any,
         sender: chrome$MessageSender,
         sendResponse: () => void
-      ) => void) &
+      ) => true | void) &
       ((
         sender: chrome$MessageSender,
         sendResponse: () => void
-      ) => void)
+      ) => true | void)
     )): void
   },
   onMessageExternal: chrome$Event & {
@@ -106,11 +106,11 @@ type chrome$runtime = {
         message: any,
         sender: chrome$MessageSender,
         sendResponse: () => void
-      ) => void) &
+      ) => true | void) &
       ((
         sender: chrome$MessageSender,
         sendResponse: () => void
-      ) => void)
+      ) => true | void)
     )): void
   },
   onRestartRequired: chrome$Event & {

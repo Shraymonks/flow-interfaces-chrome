@@ -22,6 +22,7 @@ declare var chrome: {
   instanceID: chrome$instanceID,
   networking: chrome$networking,
   notifications: chrome$notifications,
+  omnibox: chrome$omnibox,
   pageAction: chrome$pageAction,
   permissions: chrome$permissions,
   power: chrome$power,
@@ -35,5 +36,5 @@ declare var chrome: {
   topSites: chrome$topSites,
   wallpaper: chrome$wallpaper,
   webstore: chrome$webstore,
-  windows: chrome$windows
+  windows: chrome$windows,
 };

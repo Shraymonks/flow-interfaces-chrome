@@ -18,6 +18,7 @@ declare var chrome: {
   extensionTypes: chrome$extensionTypes,
   fileBrowserHandler: chrome$fileBrowserHandler,
   fontSettings: chrome$fontSettings,
+  i18n: chrome$i18n,
   idle: chrome$idle,
   instanceID: chrome$instanceID,
   networking: chrome$networking,

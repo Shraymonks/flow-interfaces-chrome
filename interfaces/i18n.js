@@ -12,7 +12,7 @@ type chrome$LanguageDetectionResult = {
 
 type chrome$i18n = {
   getAcceptLanguages(callback: (languages: Array<chrome$LanguageCode>) => void): void,
-  getMessage: (messageName: string, substitutions?: string | Array<string>) => string,
+  getMessage(messageName: string, substitutions?: string | Array<string>): ?string,
   getUILanguage(): string,
   detectLanguage(text: string, callback: (result: chrome$LanguageDetectionResult) => void): void,
 };

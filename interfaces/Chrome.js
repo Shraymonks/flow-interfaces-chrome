@@ -19,6 +19,7 @@ declare var chrome: {
   fileBrowserHandler: chrome$fileBrowserHandler,
   fontSettings: chrome$fontSettings,
   i18n: chrome$i18n,
+  identity: chrome$identity,
   idle: chrome$idle,
   instanceID: chrome$instanceID,
   networking: chrome$networking,

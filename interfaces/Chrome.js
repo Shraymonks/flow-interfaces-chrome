@@ -37,6 +37,7 @@ declare var chrome: {
   tabs: chrome$tabs,
   topSites: chrome$topSites,
   wallpaper: chrome$wallpaper,
+  webRequest: chrome$webRequest,
   webstore: chrome$webstore,
   windows: chrome$windows,
 };

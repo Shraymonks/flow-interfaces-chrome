@@ -30,7 +30,9 @@ type chrome$RequestFilter = {
   tabId?: number,
   windowId?: number,
 };
-type chrome$HttpHeaders = Array<{name: string, value?: any, binaryValue?: any}>;
+type chrome$HttpHeaders =
+  | Array<{name: string, value: any}>
+  | Array<{name: string, binaryValue: any}>;
 type chrome$BlockingResponse = {
   cancel?: boolean,
   redirectUrl?: string,
@@ -39,10 +41,10 @@ type chrome$BlockingResponse = {
   authCredentials?: {username: string, password: string},
 };
 type chrome$UploadData = {
-  bytes?: any,
+  bytes?: ArrayBuffer,
   file?: string,
 };
-type chrome$FormDataItem = any;
+type chrome$FormDataItem = ArrayBuffer;
 
 type chrome$webRequest = {
   MAX_HANDLER_BEHAVIOR_CHANGED_CALLS_PER_10_MINUTES: number,
@@ -57,7 +59,7 @@ type chrome$webRequest = {
         parentFrameId: number,
         requestBody?: {
           error?: string,
-          formData?: {[string]: any},
+          formData?: {[string]: chrome$FormDataItem},
           raw?: Array<chrome$UploadData>,
         },
         tabId: number,

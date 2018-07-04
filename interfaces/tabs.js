@@ -29,6 +29,16 @@ type chrome$Tab = {
 
 type chrome$TabStatus = 'complete' | 'loading';
 
+type chrome$TabChangeInfo = {
+  audible?: boolean,
+  favIconUrl?: string,
+  mutedInfo?: chrome$MutedInfo,
+  pinned?: boolean,
+  status?: string,
+  title?: string,
+  url?: string
+};
+
 type chrome$ZoomSettings = {
   defaultZoomFactor?: number,
   mode?: chrome$ZoomSettingsMode,
@@ -296,15 +306,7 @@ type chrome$tabs = {
   onUpdated: chrome$Event & {
     addListener(callback: (
       tabId: number,
-      changeInfo: {
-        audible?: boolean,
-        favIconUrl?: string,
-        mutedInfo?: chrome$MutedInfo,
-        pinned?: boolean,
-        status?: string,
-        title?: string,
-        url?: string
-      },
+      changeInfo: chrome$TabChangeInfo,
       tab: chrome$Tab
     ) => void): void
   },

@@ -24,6 +24,7 @@ type chrome$OnAuthRequiredOptions =
 type chrome$OnResponseStartedOptions = 'responseHeaders';
 type chrome$OnBeforeRedirectOptions = 'responseHeaders';
 type chrome$OnCompletedOptions = 'responseHeaders';
+type chrome$OnErrorOccurredOptions = void;
 type chrome$RequestFilter = {
   urls: Array<string>,
   types?: Array<chrome$ResourceType>,

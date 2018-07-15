@@ -6,7 +6,7 @@ type chrome$StorageChange = {
 type chrome$StorageArea = {
   clear(callback?: () => void): void,
   get: (
-    ((keys: string | Array<string> | Object, callback: (items: Object) => void) => void) &
+    ((keys: string | Array<string> | Object | null, callback: (items: Object) => void) => void) &
     ((callback: (items: Object) => void) => void)
   ),
   getBytesInUse: (

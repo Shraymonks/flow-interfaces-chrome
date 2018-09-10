@@ -93,7 +93,7 @@ type chrome$runtime = {
         message: any,
         sender: chrome$MessageSender,
         sendResponse: () => void
-      ) => true | void) &
+      ) => true | void) |
       ((
         sender: chrome$MessageSender,
         sendResponse: () => void
@@ -106,7 +106,7 @@ type chrome$runtime = {
         message: any,
         sender: chrome$MessageSender,
         sendResponse: () => void
-      ) => true | void) &
+      ) => true | void) |
       ((
         sender: chrome$MessageSender,
         sendResponse: () => void

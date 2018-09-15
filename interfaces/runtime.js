@@ -33,6 +33,11 @@ type chrome$OnInstalledReason = 'chrome_update' | 'install' | 'shared_module_upd
 
 type chrome$OnRestartRequiredReason = 'app_update' | 'os_update' | 'periodic';
 
+type chrome$connectInfo = {
+  includeTlsChannelId?: boolean,
+  name?: string
+};
+
 type chrome$runtime = {
   id: string,
   lastError: {message?: string},

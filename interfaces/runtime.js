@@ -37,10 +37,8 @@ type chrome$runtime = {
   id: string,
   lastError: {message?: string},
 
-  connect(extensionId?: string, connectInfo?: {
-    includeTlsChannelId?: boolean,
-    name?: string
-  }): chrome$Port,
+  connect(extensionId: string, connectInfo?: chrome$connectInfo): chrome$Port,
+  connect(connectInfo?: chrome$connectInfo): chrome$Port,
   connectNative(application: string): chrome$Port,
   getBackgroundPage(callback: (backgroundPage: any) => void): void,
   getManifest(): Object,

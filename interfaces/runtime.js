@@ -33,7 +33,7 @@ type chrome$OnInstalledReason = 'chrome_update' | 'install' | 'shared_module_upd
 
 type chrome$OnRestartRequiredReason = 'app_update' | 'os_update' | 'periodic';
 
-type chrome$connectInfo = {
+type chrome$ConnectInfo = {
   includeTlsChannelId?: boolean,
   name?: string
 };
@@ -42,8 +42,8 @@ type chrome$runtime = {
   id: string,
   lastError: {message?: string},
 
-  connect(extensionId: string, connectInfo?: chrome$connectInfo): chrome$Port,
-  connect(connectInfo?: chrome$connectInfo): chrome$Port,
+  connect(extensionId: string, connectInfo?: chrome$ConnectInfo): chrome$Port,
+  connect(connectInfo?: chrome$ConnectInfo): chrome$Port,
   connectNative(application: string): chrome$Port,
   getBackgroundPage(callback: (backgroundPage: any) => void): void,
   getManifest(): Object,

@@ -38,10 +38,12 @@ type chrome$system = {
     }) => void): void,
     getInfo(callback: (info: Array<chrome$StorageUnitInfo>) => void): void,
 
-    onAttached: chrome$Event & {
+    onAttached: {
+      ...chrome$Event,
       addListener(callback: (info: chrome$StorageUnitInfo) => void): void
     },
-    onDetached: chrome$Event & {
+    onDetached: {
+      ...chrome$Event,
       addListener(callback: (id: string) => void): void
     }
   }

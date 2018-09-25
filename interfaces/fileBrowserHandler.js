@@ -15,7 +15,8 @@ type chrome$fileBrowserHandler = {
     }) => void
   ): void,
 
-  onExecute: chrome$Event & {
+  onExecute: {
+    ...chrome$Event,
     addListener(callback: (id: string, details: chrome$FileHanlderExecuteEventDetails) => void): void
   }
 }

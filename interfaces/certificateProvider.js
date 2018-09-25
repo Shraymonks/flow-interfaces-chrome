@@ -12,12 +12,14 @@ type chrome$SignRequest = {
 };
 
 type chrome$certificateProvider = {
-  onCertificatesRequested: chrome$Event & {
+  onCertificatesRequested: {
+    ...chrome$Event,
     addListener(callback: (
       reportCallback: (certificates: Array<chrome$CertificateInfo>) => void
     ) => void): void
   },
-  onSignDigestRequested: chrome$Event & {
+  onSignDigestRequested: {
+    ...chrome$Event,
     addListener(callback: (
       request: chrome$SignRequest,
       reportCallback: (signature?: ArrayBuffer) => void

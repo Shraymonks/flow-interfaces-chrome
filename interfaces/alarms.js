@@ -26,7 +26,8 @@ type chrome$alarms = {
   ),
   getAll(callback: (alarms: Array<chrome$Alarm>) => void): void,
 
-  onAlarm: chrome$Event & {
+  onAlarm: {
+    ...chrome$Event,
     addListener(callback: $alarm$AlarmCallback): void
   }
 };

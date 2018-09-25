@@ -46,19 +46,24 @@ type chrome$notifications = {
   getPermissionLevel(callback: (level: chrome$PermissionLevel) => void): void,
   update(notificationId: string, options: chrome$NotificationOptions, callback?: (wasUpdated: boolean) => void): void,
 
-  onButtonClicked: chrome$Event & {
+  onButtonClicked: {
+    ...chrome$Event,
     addListener(callback: (notificationId: string, buttonIndex: number) => void): void,
   },
-  onClicked: chrome$Event & {
+  onClicked: {
+    ...chrome$Event,
     addListener(callback: (notificationId: string) => void): void,
   },
-  onClosed: chrome$Event & {
+  onClosed: {
+    ...chrome$Event,
     addListener(callback: (notificationId: string, byUser: boolean) => void): void,
   },
-  onPermissionLevelChanged: chrome$Event & {
+  onPermissionLevelChanged: {
+    ...chrome$Event,
     addListener(callback: (level: chrome$PermissionLevel) => void): void,
   },
-  onShowSettings: chrome$Event & {
+  onShowSettings: {
+    ...chrome$Event,
     addListener(callback: () => void): void,
   },
 };

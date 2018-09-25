@@ -57,7 +57,8 @@ type chrome$cookies = {
     value?: string
   }, callback?: (cookie: chrome$Cookie) => void): void,
 
-  onChanged: chrome$Event & {
+  onChanged: {
+    ...chrome$Event,
     addListener(callback: (changeInfo: {
       cause: chrome$OnChangedCause,
       cookie: chrome$Cookie,

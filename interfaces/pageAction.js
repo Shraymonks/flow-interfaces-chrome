@@ -19,7 +19,8 @@ type chrome$pageAction = {
   }): void,
   show(tabId: number): void,
 
-  onClicked: chrome$Event & {
+  onClicked: {
+    ...chrome$Event,
     addListener(callback: (tab: chrome$Tab) => void): void
   }
 };

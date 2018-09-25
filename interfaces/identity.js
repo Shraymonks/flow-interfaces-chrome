@@ -16,7 +16,8 @@ type chrome$identity = {
     interactive?: boolean
   }, callback: (responseUrl?: string) => void): void,
   getRedirectURL(path?: string): string,
-  onSignInChanged: chrome$Event & {
+  onSignInChanged: {
+    ...chrome$Event,
     addListener(callback: (account: chrome$AccountInfo, signedIn: boolean) => void): void
   }
 };

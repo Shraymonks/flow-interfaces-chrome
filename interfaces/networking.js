@@ -14,7 +14,8 @@ type chrome$networking = {
     finishAuthentication(GUID: string, result: $networking$AuthResult, callback?: () => void): void,
     setNetworkFilter(networks: Array<chrome$NetworkInfo>, callback: () => void): void,
 
-    onCaptivePortalDetected: chrome$Event & {
+    onCaptivePortalDetected: {
+      ...chrome$Event,
       addListener(callback: (networkInfo: chrome$NetworkInfo) => void): void
     }
   }

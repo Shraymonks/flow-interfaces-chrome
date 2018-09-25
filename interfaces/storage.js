@@ -22,7 +22,8 @@ type chrome$storage = {
   managed: chrome$StorageArea,
   sync: chrome$StorageArea,
 
-  onChanged: chrome$Event & {
+  onChanged: {
+    ...chrome$Event,
     addListener(callback: (changes: Object, areaName: 'local' | 'managed' | 'sync') => void): void
   }
 };

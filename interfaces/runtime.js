@@ -74,20 +74,24 @@ type chrome$runtime = {
   setUninstallURL(url: string, callback?: () => void): void,
 
   onBrowserUpdateAvailable: chrome$Event,
-  onConnect: chrome$Event & {
+  onConnect: {
+    ...chrome$Event,
     addListener(callback: (port: chrome$Port) => void): void
   },
-  onConnectExternal: chrome$Event & {
+  onConnectExternal: {
+    ...chrome$Event,
     addListener(ccallback: (port: chrome$Port) => void): void
   },
-  onInstalled: chrome$Event & {
+  onInstalled: {
+    ...chrome$Event,
     addListener(callback: (details: {
       id?: string,
       previousVersion?: string,
       reason: chrome$OnInstalledReason
     }) => void): void
   },
-  onMessage: chrome$Event & {
+  onMessage: {
+    ...chrome$Event,
     addListener(callback: (
       ((
         message: any,
@@ -100,7 +104,8 @@ type chrome$runtime = {
       ) => true | void)
     )): void
   },
-  onMessageExternal: chrome$Event & {
+  onMessageExternal: {
+    ...chrome$Event,
     addListener(callback: (
       ((
         message: any,
@@ -113,13 +118,15 @@ type chrome$runtime = {
       ) => true | void)
     )): void
   },
-  onRestartRequired: chrome$Event & {
+  onRestartRequired: {
+    ...chrome$Event,
     addListener(callback: (reason: chrome$OnRestartRequiredReason) => void): void
   },
   onStartup: chrome$Event,
   onSuspend: chrome$Event,
   onSuspendCanceled: chrome$Event,
-  onUpdateAvailable: chrome$Event & {
+  onUpdateAvailable: {
+    ...chrome$Event,
     addListener(callback: (details: {version: string}) => void): void
   }
 };

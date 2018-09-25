@@ -9,10 +9,12 @@ type chrome$permissions = {
   remove(permissions: chrome$Permissions, callback?: (removed: boolean) => void): void,
   request(permissions: chrome$Permissions, callback?: (granted: boolean) => void): void,
 
-  onAdded: chrome$Event & {
+  onAdded: {
+    ...chrome$Event,
     addListener(callback: (permissions: chrome$Permissions) => void): void
   },
-  onRemoved: chrome$Event & {
+  onRemoved: {
+    ...chrome$Event,
     addListener(callback: (permissions: chrome$Permissions) => void): void
   }
 };

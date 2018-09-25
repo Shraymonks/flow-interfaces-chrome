@@ -7,7 +7,8 @@ type chrome$idle = {
   ) => void): void,
   setDetectionInterval(intervalInSeconds: number): void,
 
-  onStateChanged: chrome$Event & {
+  onStateChanged: {
+    ...chrome$Event,
     addListener(callback: (newState: chrome$IdleState) => void): void
   }
 };

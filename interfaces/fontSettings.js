@@ -44,19 +44,22 @@ type chrome$fontSettings = {
   }, callback?: () => void): void,
   setMinimumFontSize(details: {pixelSize: number}, callback?: () => void): void,
 
-  onDefaultFixedFontSizeChanged: chrome$Event & {
+  onDefaultFixedFontSizeChanged: {
+    ...chrome$Event,
     addListener(callback: (details: {
       levelOfControl: chrome$LevelOfControl,
       pixelSize: number
     }) => void): void
   },
-  onDefaultFontSizeChanged: chrome$Event & {
+  onDefaultFontSizeChanged: {
+    ...chrome$Event,
     addListener(callback: (details: {
       levelOfControl: chrome$LevelOfControl,
       pixelSize: number
     }) => void): void
   },
-  onFontChanged: chrome$Event & {
+  onFontChanged: {
+    ...chrome$Event,
     addListener(callback: (details: {
       fontId: string,
       genericFamily: chrome$GenericFamily,
@@ -64,7 +67,8 @@ type chrome$fontSettings = {
       script?: chrome$ScriptCode
     }) => void): void
   },
-  onMinimumFontSizeChanged: chrome$Event & {
+  onMinimumFontSizeChanged: {
+    ...chrome$Event,
     addListener(callback: (details: {
       levelOfControl: chrome$LevelOfControl,
       pixelSize: number

@@ -29,7 +29,8 @@ type chrome$ChromeSetting = {
     value: any
   }, callback?: () => void): void,
 
-  onChange: chrome$Event & {
+  onChange: {
+    ...chrome$Event,
     addListener(callback: (details: {
       incognitoSpecific?: boolean,
       levelOfControl: chrome$LevelOfControl,

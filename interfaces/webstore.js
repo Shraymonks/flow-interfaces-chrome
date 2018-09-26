@@ -27,10 +27,12 @@ type chrome$webstore = {
     failureCallback: (error: string, errorCode?: chrome$ErrorCode) => void
   ): void,
 
-  onDownloadProgress: chrome$Event & {
+  onDownloadProgress: {
+    ...chrome$Event,
     addListener(callback: (percentDownloaded: number) => void): void
   },
-  onInstallStageChanged: chrome$Event & {
+  onInstallStageChanged: {
+    ...chrome$Event,
     addListener(callback: (stage: chrome$InstallStage) => void): void
   }
 };

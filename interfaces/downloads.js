@@ -135,7 +135,8 @@ type chrome$downloads = {
   show(downloadId: number): void,
   showDefaultFolder(): void,
 
-  onChanged: chrome$Event & {
+  onChanged: {
+    ...chrome$Event,
     addListener(callback: (downloadDelta: {
       canResume?: chrome$BooleanDelta,
       danger?: chrome$StringDelta,
@@ -153,10 +154,12 @@ type chrome$downloads = {
       url?: chrome$StringDelta
     }) => void): void
   },
-  onCreated: chrome$Event & {
+  onCreated: {
+    ...chrome$Event,
     addListener(callback: (downloadItem: chrome$DownloadItem) => void): void
   },
-  onDeterminingFilename: chrome$Event & {
+  onDeterminingFilename: {
+    ...chrome$Event,
     addListener(callback: (
       downloadItem: chrome$DownloadItem,
       suggest: (suggestion?: {
@@ -165,7 +168,8 @@ type chrome$downloads = {
       }) => void
     ) => void): void
   },
-  onErased: chrome$Event & {
+  onErased: {
+    ...chrome$Event,
     addListener(callback: (downloadId: number) => void): void
   },
 };

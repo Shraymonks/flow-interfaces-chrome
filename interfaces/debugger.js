@@ -25,10 +25,12 @@ type chrome$debugger = {
   sendCommand(target: chrome$Debuggee, method: string, commandParams?: Object, callback?: (result: Object) => void): void,
   getTargets(callback: (result: Array<chrome$TargetInfo>) => void): void,
 
-  onDetach: chrome$Event & {
+  onDetach: {
+    ...chrome$Event,
     addListener(callback: (source: chrome$Debuggee, reason: chrome$DetachReason) => void): void
   },
-  onEvent: chrome$Event & {
+  onEvent: {
+    ...chrome$Event,
     addListener(callback: (source: chrome$Debuggee, method: string, params?: Object) => void): void
   }
 };

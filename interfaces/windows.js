@@ -91,15 +91,18 @@ type chrome$windows = {
     callback?: (window: chrome$Window) => void
   ): void,
 
-  onCreated: chrome$Event & {
+  onCreated: {
+    ...chrome$Event,
     Filters: Array<chrome$WindowType>,
     addListener(callback: (window: chrome$Window) => void): void
   },
-  onFocusChanged: chrome$Event & {
+  onFocusChanged: {
+    ...chrome$Event,
     Filters: Array<chrome$WindowType>,
     addListener(callback: (windowId: number) => void): void
   },
-  onRemoved: chrome$Event & {
+  onRemoved: {
+    ...chrome$Event,
     Filters: Array<chrome$WindowType>,
     addListener(callback: (windowId: number) => void): void
   },

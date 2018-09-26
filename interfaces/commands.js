@@ -7,7 +7,8 @@ type chrome$Command = {
 type chrome$commands = {
   getAll(callback: (commands: Array<chrome$Command>) => void): void,
 
-  onCommand: chrome$Event & {
+  onCommand: {
+    ...chrome$Event,
     addListener(callback: (command: string) => void): void
   }
 };

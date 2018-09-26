@@ -60,18 +60,22 @@ type chrome$bookmarks = {
     callback?: $bookmarks$BookmarkTreeNodeCallback
   ): void,
 
-  onChanged: chrome$Event & {
+  onChanged: {
+    ...chrome$Event,
     addListener(callback: (id: string, changeInfo: {title: string, url?: string}) => void): void
   },
-  onChildrenReordered: chrome$Event & {
+  onChildrenReordered: {
+    ...chrome$Event,
     addListener(callback: (id: string, reorderInfo: Array<string>) => void): void
   },
-  onCreated: chrome$Event & {
+  onCreated: {
+    ...chrome$Event,
     addListener(callback: (id: string, bookmark: chrome$BookmarkTreeNode) => void): void
   },
   onImportBegan: chrome$Event,
   onImportEnded: chrome$Event,
-  onMoved: chrome$Event & {
+  onMoved: {
+    ...chrome$Event,
     addListener(callback: (
       id: string,
       moveInfo: {
@@ -82,7 +86,8 @@ type chrome$bookmarks = {
       }
     ) => void): void
   },
-  onRemoved: chrome$Event & {
+  onRemoved: {
+    ...chrome$Event,
     addListener(callback: (
       id: string,
       removeInfo: {

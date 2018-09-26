@@ -18,7 +18,8 @@ type chrome$browserAction  = {
   setPopup(details: {popup: string, tabId?: number}): void,
   setTitle(details: {tabId?: number, title: string}): void,
 
-  onClicked: chrome$Event & {
+  onClicked: {
+    ...chrome$Event,
     addListener(callback: (tab: chrome$Tab) => void): void
   }
 };

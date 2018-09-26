@@ -12,7 +12,8 @@ type chrome$signedInDevices = {
     ((callback: (devices: Array<chrome$DeviceInfo>) => void) => void)
   ),
 
-  onDeviceInfoChange: chrome$Event & {
+  onDeviceInfoChange: {
+    ...chrome$Event,
     addListener(callback: (devices: Array<chrome$Event>) => void): void
   }
 }

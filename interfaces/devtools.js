@@ -32,10 +32,12 @@ type $devtools$inspectedWindow = {
   }): void,
   getResources(callback: (resources: Array<chrome$Resource>) => void): void,
 
-  onResourceAdded: chrome$Event & {
+  onResourceAdded: {
+    ...chrome$Event,
     addListener(callback: (resource: chrome$Resource) => void): void
   },
-  onResourceContentCommitted: chrome$Event & {
+  onResourceContentCommitted: {
+    ...chrome$Event,
     addListener(callback: (resource: chrome$Resource, content: string) => void): void
   }
 };
@@ -47,10 +49,12 @@ type chrome$Request = {
 type $devtools$network = {
   getHAR(callback: (harLog: Object) => void): void,
 
-  onNavigated: chrome$Event & {
+  onNavigated: {
+    ...chrome$Event,
     addListener(callback: (url: string) => void): void
   },
-  onRequestFinished: chrome$Event & {
+  onRequestFinished: {
+    ...chrome$Event,
     addListener(callback: (request: chrome$Request) => void): void
   }
 };
@@ -71,10 +75,12 @@ type chrome$ExtensionPanel = {
   createStatusBarButton(iconPath: string, tooltipText: string, disabled: boolean): chrome$Button,
 
   onHidden: chrome$Event,
-  onSearch: chrome$Event & {
+  onSearch: {
+    ...chrome$Event,
     addListener(callback: (action: string, queryString?: string) => void): void
   },
-  onShown: chrome$Event & {
+  onShown: {
+    ...chrome$Event,
     addListener(callback: (window: any) => void): void
   }
 };

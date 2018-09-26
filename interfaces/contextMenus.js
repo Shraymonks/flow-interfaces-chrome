@@ -61,7 +61,8 @@ type chrome$contextMenus = {
     type?: chrome$ItemType,
   }, callback?: () => void): void,
 
-  onClicked: chrome$Event & {
+  onClicked: {
+    ...chrome$Event,
     addListener(callback: $contextMenus$OnClick): void
   }
 };

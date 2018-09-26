@@ -50,7 +50,8 @@ type chrome$FormDataItem = ArrayBuffer;
 type chrome$webRequest = {
   MAX_HANDLER_BEHAVIOR_CHANGED_CALLS_PER_10_MINUTES: number,
   handlerBehaviorChanged: (callback: () => void) => void,
-  onBeforeRequest: chrome$Event & {
+  onBeforeRequest: {
+    ...chrome$Event,
     addListener(
       callback: (details: {
         requestId: string,
@@ -72,7 +73,8 @@ type chrome$webRequest = {
       extraInfoSpec?: Array<chrome$OnBeforeRequestOptions>,
     ): void,
   },
-  onBeforeSendHeaders: chrome$Event & {
+  onBeforeSendHeaders: {
+    ...chrome$Event,
     addListener(
       callback: (details: {
         requestId: string,
@@ -90,7 +92,8 @@ type chrome$webRequest = {
       extraInfoSpec?: Array<chrome$OnBeforeSendHeadersOptions>,
     ): void,
   },
-  onSendHeaders: chrome$Event & {
+  onSendHeaders: {
+    ...chrome$Event,
     addListener(
       callback: (details: {
         requestId: string,
@@ -108,7 +111,8 @@ type chrome$webRequest = {
       extraInfoSpec?: Array<chrome$OnSendHeadersOptions>,
     ): void,
   },
-  onHeadersReceived: chrome$Event & {
+  onHeadersReceived: {
+    ...chrome$Event,
     addListener(
       callback: (details: {
         requestId: string,
@@ -128,7 +132,8 @@ type chrome$webRequest = {
       extraInfoSpec?: Array<chrome$OnHeadersReceivedOptions>,
     ): void,
   },
-  onAuthRequired: chrome$Event & {
+  onAuthRequired: {
+    ...chrome$Event,
     addListener(
       callback: (
         details: {
@@ -155,7 +160,8 @@ type chrome$webRequest = {
       extraInfoSpec?: Array<chrome$OnAuthRequiredOptions>,
     ): void,
   },
-  onResponseStarted: chrome$Event & {
+  onResponseStarted: {
+    ...chrome$Event,
     addListener(
       callback: (details: {
         requestId: string,
@@ -177,7 +183,8 @@ type chrome$webRequest = {
       extraInfoSpec?: Array<chrome$OnResponseStartedOptions>,
     ): void,
   },
-  onBeforeRedirect: chrome$Event & {
+  onBeforeRedirect: {
+    ...chrome$Event,
     addListener(
       callback: (details: {
         requestId: string,
@@ -200,7 +207,8 @@ type chrome$webRequest = {
       extraInfoSpec?: Array<chrome$OnBeforeRedirectOptions>,
     ): void,
   },
-  onCompleted: chrome$Event & {
+  onCompleted: {
+    ...chrome$Event,
     addListener(
       callback: (details: {
         requestId: string,
@@ -222,7 +230,8 @@ type chrome$webRequest = {
       extraInfoSpec?: Array<chrome$OnCompletedOptions>,
     ): void,
   },
-  onErrorOccurred: chrome$Event & {
+  onErrorOccurred: {
+    ...chrome$Event,
     addListener(
       callback: (details: {
         requestId: string,

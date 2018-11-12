@@ -1,7 +1,7 @@
 type chrome$Port = {
   disconnect: Function,
   name: string,
-  onDiscconect: Object,
+  onDisconnect: Object,
   onMessage: Object,
   postMessage: Function,
   sender?: chrome$MessageSender

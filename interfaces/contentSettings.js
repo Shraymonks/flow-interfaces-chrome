@@ -15,25 +15,25 @@ type chrome$MultipleAutomaticDownloadsContentSetting = 'allow' | 'block' | 'ask'
 
 type chrome$ResourceIdentifier = {
   id: string,
-  description: string,
+  description?: string,
 };
 
 type chrome$contentSettings = {
   clear(details: {
-    scope: chrome$Scope,
-  }, callback: () => void): void,
+    scope?: chrome$Scope,
+  }, callback?: () => void): void,
   get(details: {
     primaryUrl: string,
     secondaryUrl?: string,
     resourceIdentifier?: chrome$ResourceIdentifier,
     incognito?: boolean,
-  }, callback: (details: { setting: * }) => void): void,
+  }, callback: (details: { setting: any }) => void): void,
   set(details: {
     primaryPattern: string,
     secondaryPattern?: string,
     resourceIdentifier?: chrome$ResourceIdentifier,
-    setting: *,
+    setting: any,
     scope?: chrome$Scope,
-  }, callback: () => void): void,
-  getResourceIdentifiers(callback?: (resourceIdentifiers?: Array<chrome$ResourceIdentifier>) => void): void,
+  }, callback?: () => void): void,
+  getResourceIdentifiers(callback: (resourceIdentifiers?: Array<chrome$ResourceIdentifier>) => void): void,
 };

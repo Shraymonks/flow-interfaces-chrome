@@ -1,5 +1,3 @@
-/* @flow */
-
 type chrome$Scope = 'regular' | 'incognito_session_only';
 type chrome$CookiesContentSetting = 'allow' | 'block' | 'session_only';
 type chrome$ImagesContentSetting = 'allow' | 'block';
@@ -57,8 +55,6 @@ type microphoneContentSettingType = { microphone: chrome$contentSettingsTemplate
 type cameraContentSettingType = { camera: chrome$contentSettingsTemplate<chrome$CameraContentSetting> };
 type ppapiBrokerContentSettingType = { ppapiBroker: chrome$contentSettingsTemplate<chrome$PpapiBrokerContentSetting> };
 type multipleAutomaticDownloadsContentSettingType = { multipleAutomaticDownloads: chrome$contentSettingsTemplate<chrome$MultipleAutomaticDownloadsContentSetting> };
-
-
 
 type chrome$contentSettings = 
   scopeType &

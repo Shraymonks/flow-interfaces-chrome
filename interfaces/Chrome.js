@@ -7,6 +7,7 @@ declare var chrome: {
   browsingData: chrome$browsingData,
   certificateProvider: chrome$certificateProvider,
   commands: chrome$commands,
+  contentSettings: chrome$contentSettings,
   contextMenus: chrome$contextMenus,
   cookies: chrome$cookies,
   debugger: chrome$debugger,

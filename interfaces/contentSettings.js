@@ -1,4 +1,3 @@
-type chrome$Scope = 'regular' | 'incognito_session_only';
 type chrome$CookiesContentSetting = 'allow' | 'block' | 'session_only';
 type chrome$ImagesContentSetting = 'allow' | 'block';
 type chrome$JavascriptContentSetting = 'allow' | 'block';
@@ -17,6 +16,7 @@ type chrome$ResourceIdentifier = {
   id: string,
   description?: string,
 };
+type chrome$Scope = 'regular' | 'incognito_session_only';
 
 class chrome$contentSettingsTemplate<contentSettingsType> {
   clear: (details: {
@@ -41,7 +41,6 @@ class chrome$contentSettingsTemplate<contentSettingsType> {
   getResourceIdentifiers: (callback: (resourceIdentifiers?: Array<chrome$ResourceIdentifier>) => void) => void;
 };
 
-type scopeType = { scope: chrome$contentSettingsTemplate<chrome$Scope> };
 type cookiesContentSettingType = { cookies: chrome$contentSettingsTemplate<chrome$CookiesContentSetting> };
 type imagesContentSettingType = { images: chrome$contentSettingsTemplate<chrome$ImagesContentSetting> };
 type javascriptContentSettingType = { javascript: chrome$contentSettingsTemplate<chrome$JavascriptContentSetting> };
@@ -53,11 +52,10 @@ type fullscreenContentSettingType = { fullscreen: chrome$contentSettingsTemplate
 type mouselockContentSettingType = { mouselock: chrome$contentSettingsTemplate<chrome$MouselockContentSetting> };
 type microphoneContentSettingType = { microphone: chrome$contentSettingsTemplate<chrome$MicrophoneContentSetting> };
 type cameraContentSettingType = { camera: chrome$contentSettingsTemplate<chrome$CameraContentSetting> };
-type ppapiBrokerContentSettingType = { ppapiBroker: chrome$contentSettingsTemplate<chrome$PpapiBrokerContentSetting> };
-type multipleAutomaticDownloadsContentSettingType = { multipleAutomaticDownloads: chrome$contentSettingsTemplate<chrome$MultipleAutomaticDownloadsContentSetting> };
+type unsandboxedPluginsContentSettingType = { unsandboxedPlugins: chrome$contentSettingsTemplate<chrome$PpapiBrokerContentSetting> };
+type automaticDownloadsContentSettingType = { automaticDownloads: chrome$contentSettingsTemplate<chrome$MultipleAutomaticDownloadsContentSetting> };
 
 type chrome$contentSettings = 
-  scopeType &
   cookiesContentSettingType &
   imagesContentSettingType &
   javascriptContentSettingType &
@@ -69,5 +67,5 @@ type chrome$contentSettings =
   mouselockContentSettingType &
   microphoneContentSettingType &
   cameraContentSettingType &
-  ppapiBrokerContentSettingType &
-  multipleAutomaticDownloadsContentSettingType;
+  unsandboxedPluginsContentSettingType &
+  automaticDownloadsContentSettingType;

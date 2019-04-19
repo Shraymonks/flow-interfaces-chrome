@@ -11,6 +11,7 @@ declare var chrome: {
   contextMenus: chrome$contextMenus,
   cookies: chrome$cookies,
   debugger: chrome$debugger,
+  declarativeContent: chrome$declarativeContent,
   desktopCapture: chrome$desktopCapture,
   devtools: chrome$devtools,
   documentScan: chrome$documentScan,

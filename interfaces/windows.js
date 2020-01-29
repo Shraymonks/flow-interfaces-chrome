@@ -7,7 +7,7 @@ type chrome$Window = {
   focused: boolean,
   height?: number,
   id?: number,
-  incofnigto: boolean,
+  incognito: boolean,
   left?: number,
   sessionId?: string,
   state?: chrome$WindowState,

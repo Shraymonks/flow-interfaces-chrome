@@ -1,7 +1,19 @@
 {
-  "author": "Raymond Ha <raymond@shraymonks.com> (http://shraymonks.com)",
-  "description": "Flow interface declarations for the Chrome Extensions API",
   "name": "flow-interfaces-chrome",
+  "description": "Flow interface declarations for the Chrome Extensions API",
+  "version": "0.7.0",
+  "author": "Raymond Ha <raymond@shraymonks.com> (https://raymondha.com)",
   "repository": "shraymonks/flow-interfaces-chrome",
-  "version": "0.6.0"
+  "keywords": [
+    "flow",
+    "google",
+    "chrome",
+    "extension",
+    "interface",
+    "type",
+    "declaration"
+  ],
+  "homepage": "https://github.com/Shraymonks/flow-interfaces-chrome#readme",
+  "bugs": "https://github.com/Shraymonks/flow-interfaces-chrome/issues",
+  "license": "MIT"
 }

@@ -1,4 +1,3 @@
-type chrome$Scope = 'regular' | 'incognito_session_only';
 type chrome$CookiesContentSetting = 'allow' | 'block' | 'session_only';
 type chrome$ImagesContentSetting = 'allow' | 'block';
 type chrome$JavascriptContentSetting = 'allow' | 'block';
@@ -17,23 +16,56 @@ type chrome$ResourceIdentifier = {
   id: string,
   description?: string,
 };
+type chrome$Scope = 'regular' | 'incognito_session_only';
 
-type chrome$contentSettings = {
-  clear(details: {
+class chrome$contentSettingsTemplate<contentSettingsType> {
+  clear: (details: {
     scope?: chrome$Scope,
-  }, callback?: () => void): void,
-  get(details: {
+  }, callback?: () => void) => void;
+
+  get: (details: {
     primaryUrl: string,
     secondaryUrl?: string,
     resourceIdentifier?: chrome$ResourceIdentifier,
     incognito?: boolean,
-  }, callback: (details: { setting: any }) => void): void,
-  set(details: {
+  }, callback: (details: { setting: contentSettingsType }) => void) => void;
+
+  set: (details: {
     primaryPattern: string,
     secondaryPattern?: string,
     resourceIdentifier?: chrome$ResourceIdentifier,
-    setting: any,
-    scope?: chrome$Scope,
-  }, callback?: () => void): void,
-  getResourceIdentifiers(callback: (resourceIdentifiers?: Array<chrome$ResourceIdentifier>) => void): void,
+    setting: contentSettingsType,
+    scope?: any,
+  }, callback?: () => void) => void;
+
+  getResourceIdentifiers: (callback: (resourceIdentifiers?: Array<chrome$ResourceIdentifier>) => void) => void;
 };
+
+type cookiesContentSettingType = { cookies: chrome$contentSettingsTemplate<chrome$CookiesContentSetting> };
+type imagesContentSettingType = { images: chrome$contentSettingsTemplate<chrome$ImagesContentSetting> };
+type javascriptContentSettingType = { javascript: chrome$contentSettingsTemplate<chrome$JavascriptContentSetting> };
+type locationContentSettingType = { location: chrome$contentSettingsTemplate<chrome$LocationContentSetting> };
+type pluginsContentSettingType = { plugins: chrome$contentSettingsTemplate<chrome$PluginsContentSetting> };
+type popupsContentSettingType = { popups: chrome$contentSettingsTemplate<chrome$PopupsContentSetting> };
+type notificationsContentSettingType = { notifications: chrome$contentSettingsTemplate<chrome$NotificationsContentSetting> };
+type fullscreenContentSettingType = { fullscreen: chrome$contentSettingsTemplate<chrome$FullscreenContentSetting> };
+type mouselockContentSettingType = { mouselock: chrome$contentSettingsTemplate<chrome$MouselockContentSetting> };
+type microphoneContentSettingType = { microphone: chrome$contentSettingsTemplate<chrome$MicrophoneContentSetting> };
+type cameraContentSettingType = { camera: chrome$contentSettingsTemplate<chrome$CameraContentSetting> };
+type unsandboxedPluginsContentSettingType = { unsandboxedPlugins: chrome$contentSettingsTemplate<chrome$PpapiBrokerContentSetting> };
+type automaticDownloadsContentSettingType = { automaticDownloads: chrome$contentSettingsTemplate<chrome$MultipleAutomaticDownloadsContentSetting> };
+
+type chrome$contentSettings = 
+  cookiesContentSettingType &
+  imagesContentSettingType &
+  javascriptContentSettingType &
+  locationContentSettingType &
+  pluginsContentSettingType &
+  popupsContentSettingType &
+  notificationsContentSettingType &
+  fullscreenContentSettingType &
+  mouselockContentSettingType &
+  microphoneContentSettingType &
+  cameraContentSettingType &
+  unsandboxedPluginsContentSettingType &
+  automaticDownloadsContentSettingType;

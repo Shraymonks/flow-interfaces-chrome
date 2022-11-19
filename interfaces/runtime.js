@@ -49,10 +49,11 @@ type chrome$runtime = {
   getURL(path: string): string,
   openOptionsPage(callback?: () => void): void,
   reload(): void,
-  request(callback: (status: chrome$RequestUpdateCheckStatus, details?: {
+  requestUpdateCheck(callback: (status: chrome$RequestUpdateCheckStatus, details?: {
     version: string
   }) => void): void,
   restart(): void,
+  restartAfterDelay(seconds: number, callback?: () => void): void,
   sendMessage: (
     ((
       extensionId: string,
